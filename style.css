@@ -1,0 +1,177 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS (RESET E FONTES)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. LAYOUT COM FLEXBOX (CABEÇALHO E NAVEGAÇÃO)
+   ========================================================================== */
+header {
+    background-color: #1a2a3a; /* Azul escuro tecnológico */
+    color: #ffffff;
+    padding: 2rem;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+header p {
+    color: #00ffcc; /* Verde neon para destacar o tema de IA */
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+/* Menu de navegação usando Flexbox */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Quebra de linha se a tela for pequena */
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #00ffcc;
+}
+
+/* ==========================================================================
+   3. CONTEÚDO PRINCIPAL (SEÇÕES)
+   ========================================================================== */
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    background-color: #ffffff;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+section h2 {
+    color: #1a2a3a;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #00ffcc;
+    padding-bottom: 0.3rem;
+}
+
+/* Estilização da Citação (Blockquote) */
+blockquote {
+    background-color: #e8f4f8;
+    border-left: 5px solid #1a2a3a;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+}
+
+/* Listas */
+ul {
+    margin-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   4. FORMULÁRIO DO QUIZ
+   ========================================================================== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"] {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 1rem;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 0.5rem;
+}
+
+button {
+    background-color: #1a2a3a;
+    color: white;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #00ffcc;
+    color: #1a2a3a;
+}
+
+/* ==========================================================================
+   5. RODAPÉ
+   ========================================================================== */
+footer {
+    background-color: #1a2a3a;
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    margin-top: 3rem;
+}
+
+/* ==========================================================================
+   6. RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        flex-direction: column; /* Menu vira uma lista vertical no celular */
+        align-items: center;
+        gap: 10px;
+    }
+
+    section {
+        padding: 1.5rem;
+    }
+}
