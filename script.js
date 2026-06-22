@@ -1,39 +1,42 @@
-// Aguarda o carregamento completo do HTML antes de executar o script
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // Seleciona o formulário do Quiz pelo ID
     const quizForm = document.getElementById('fake-news-form');
+    const resultadoDiv = document.getElementById('resultado-quiz');
 
-    // Escuta o evento de envio (submit) do formulário
     quizForm.addEventListener('submit', (event) => {
-        // Impede a página de recarregar ao enviar o formulário
+        // Evita o recarregamento padrão da página
         event.preventDefault();
 
-        // Captura o nome digitado pelo usuário
-        const nomeUsuario = document.getElementById('nome').value;
+        // Captura do Nome
+        const nomeUsuario = document.getElementById('nome').value.trim();
 
-        // Captura a opção selecionada no formato de rádio
-        const opcaoSelecionada = document.querySelector('input[name="checagem"]:checked');
+        // Captura das respostas selecionadas
+        const r1 = document.querySelector('input[name="pergunta1"]:checked');
+        const r2 = document.querySelector('input[name="pergunta2"]:checked');
 
-        // Validação simples: verifica se o usuário respondeu a pergunta
-        if (!opcaoSelecionada) {
-            alert(`Por favor, ${nomeUsuario}, selecione uma das opções antes de enviar!`);
-            return;
-        }
+        let acertos = 0;
 
-        // Lógica de feedback baseada na resposta
-        const resposta = opcaoSelecionada.value;
+        // Sistema de pontuação estruturado
+        if (r1 && r1.value === 'correto') acertos++;
+        if (r2 && r2.value === 'correto') acertos++;
+
+        // Manipulação avançada do DOM para exibir o resultado estilizado na tela
+        resultadoDiv.className = 'resultado-visivel'; // Ativa a classe CSS
         
-        if (resposta === 'sempre') {
-            alert(`Parabéns, ${nomeUsuario}! Você pratica a cidadania digital e ajuda a combater as fake news.`);
-        } else if (resposta === 'as-vezes') {
-            alert(`Muito bem, ${nomeUsuario}, mas lembre-se: na era das deepfakes, até o que parece real pode ser manipulado. Fique atento!`);
+        if (acertos === 2) {
+            resultadoDiv.style.backgroundColor = '#d4edda';
+            resultadoDiv.style.color = '#155724';
+            resultadoDiv.innerHTML = `🌟 Excelente, ${nomeUsuario}! Você acertou ${acertos}/2 perguntas. Você demonstra ótimas práticas de Cidadania Digital e sabe se proteger contra deepfakes!`;
+        } else if (acertos === 1) {
+            resultadoDiv.style.backgroundColor = '#fff3cd';
+            resultadoDiv.style.color = '#856404';
+            resultadoDiv.innerHTML = `⚠️ Bom trabalho, ${nomeUsuario}! Você acertou ${acertos}/2. Atenção: no mundo digital impulsionado por IA, até mídias convincentes precisam ser checadas duas vezes.`;
         } else {
-            alert(`Atenção, ${nomeUsuario}! Compartilhar sem checar pode espalhar desinformação gerada por IA. Que tal mudar esse hábito?`);
+            resultadoDiv.style.backgroundColor = '#f8d7da';
+            resultadoDiv.style.color = '#721c24';
+            resultadoDiv.innerHTML = `🚨 Atenção, ${nomeUsuario}! Você não acertou as questões de checagem. Compartilhar mídias sem validação espalha desinformação. Que tal revisar nossas dicas acima?`;
         }
 
-        // Limpa o formulário após o envio
+        // Limpa as seleções do formulário após o envio para permitir novo teste
         quizForm.reset();
     });
-
 });
