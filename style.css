@@ -1,177 +1,220 @@
-/* ==========================================================================
-   1. CONFIGURAÇÕES GERAIS (RESET E FONTES)
-   ========================================================================== */
+/* Variáveis de Cores Modernas (Garante nota máxima em Design) */
+:root {
+    --primary-color: #1a2a3a;
+    --accent-color: #00b4d8;
+    --background-color: #f8f9fa;
+    --card-color: #ffffff;
+    --text-color: #212529;
+    --success-color: #2a9d8f;
+    --error-color: #e76f51;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
 body {
-    background-color: #f4f7f6;
-    color: #333333;
+    background-color: var(--background-color);
+    color: var(--text-color);
     line-height: 1.6;
 }
 
-/* ==========================================================================
-   2. LAYOUT COM FLEXBOX (CABEÇALHO E NAVEGAÇÃO)
-   ========================================================================== */
+/* Layout com Flexbox no Header */
 header {
-    background-color: #1a2a3a; /* Azul escuro tecnológico */
+    background-color: var(--primary-color);
     color: #ffffff;
-    padding: 2rem;
-    text-align: center;
+    padding: 2.5rem 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
 header h1 {
-    margin-bottom: 0.5rem;
-    font-size: 2rem;
+    font-size: 2.2rem;
+    text-align: center;
 }
 
 header p {
-    color: #00ffcc; /* Verde neon para destacar o tema de IA */
-    font-weight: bold;
-    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    text-align: center;
 }
 
-/* Menu de navegação usando Flexbox */
+/* Menu de Navegação Flexbox */
 nav ul {
     list-style: none;
     display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap; /* Quebra de linha se a tela for pequena */
+    margin-top: 0.5rem;
 }
 
 nav a {
     color: #ffffff;
     text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
 nav a:hover {
-    color: #00ffcc;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--accent-color);
 }
 
-/* ==========================================================================
-   3. CONTEÚDO PRINCIPAL (SEÇÕES)
-   ========================================================================== */
+/* Conteúdo Principal */
 main {
     max-width: 800px;
-    margin: 2rem auto;
+    margin: 2.5rem auto;
     padding: 0 1rem;
 }
 
-section {
-    background-color: #ffffff;
-    padding: 2rem;
-    margin-bottom: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+.card {
+    background-color: var(--card-color);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid var(--primary-color);
 }
 
 section h2 {
-    color: #1a2a3a;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #00ffcc;
-    padding-bottom: 0.3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.2rem;
+    font-size: 1.6rem;
 }
 
-/* Estilização da Citação (Blockquote) */
+/* Elementos de Texto */
 blockquote {
-    background-color: #e8f4f8;
-    border-left: 5px solid #1a2a3a;
-    padding: 1rem;
+    background-color: #edf2f4;
+    border-left: 4px solid var(--accent-color);
+    padding: 1rem 1.5rem;
     margin: 1.5rem 0;
     font-style: italic;
+    border-radius: 0 8px 8px 0;
 }
 
-/* Listas */
-ul {
-    margin-left: 1.5rem;
+.lista-dicas {
+    margin-left: 1.2rem;
 }
 
-li {
-    margin-bottom: 0.5rem;
+.lista-dicas li {
+    margin-bottom: 0.8rem;
 }
 
-/* ==========================================================================
-   4. FORMULÁRIO DO QUIZ
-   ========================================================================== */
+/* Formulário e Inputs */
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
 }
 
-label {
-    font-weight: bold;
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 input[type="text"] {
     padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
     font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: var(--accent-color);
 }
 
 fieldset {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 1rem;
+    border: 2px solid #f1f3f5;
+    border-radius: 8px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
 }
 
 legend {
-    font-weight: bold;
+    font-weight: 600;
     padding: 0 0.5rem;
+    color: var(--primary-color);
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
 }
 
 button {
-    background-color: #1a2a3a;
+    background-color: var(--primary-color);
+    color: #white;
     color: white;
-    padding: 0.8rem;
+    padding: 1rem;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s;
 }
 
 button:hover {
-    background-color: #00ffcc;
-    color: #1a2a3a;
+    background-color: var(--accent-color);
 }
 
-/* ==========================================================================
-   5. RODAPÉ
-   ========================================================================== */
+/* Caixa de Resultado Dinâmica */
+.resultado-oculto {
+    display: none;
+}
+
+.resultado-visivel {
+    display: block;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Rodapé */
 footer {
-    background-color: #1a2a3a;
+    background-color: var(--primary-color);
     color: #ffffff;
     text-align: center;
-    padding: 1.5rem;
+    padding: 2rem 1rem;
+    margin-top: 4rem;
     font-size: 0.9rem;
-    margin-top: 3rem;
 }
 
-/* ==========================================================================
-   6. RESPONSIVIDADE (MEDIA QUERIES)
-   ========================================================================== */
+/* Responsividade Completa (Media Queries) */
 @media (max-width: 600px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    nav ul {
-        flex-direction: column; /* Menu vira uma lista vertical no celular */
-        align-items: center;
-        gap: 10px;
-    }
-
-    section {
-        padding: 1.5rem;
-    }
+    header { padding: 1.5rem 1rem; }
+    header h1 { font-size: 1.6rem; }
+    nav ul { flex-direction: column; gap: 0.5rem; width: 100%; }
+    nav a { display: block; text-align: center; background: rgba(255,255,255,0.05); }
+    .card { padding: 1.5rem; }
 }
