@@ -3,80 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cidadania Digital e IA</title>
+    <title>Cidadania Digital e Inteligência Artificial</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <header>
-        <h1>Cidadania Digital & Inteligência Artificial</h1>
-        <p>O Impacto das Deepfakes e da Desinformação na Sociedade</p>
-        <nav>
-            <ul>
-                <li><a href="#sobre">O que são Deepfakes</a></li>
-                <li><a href="#perigos">Os Perigos</a></li>
-                <li><a href="#como-identificar">Como Identificar</a></li>
-                <li><a href="#quiz">Quiz Interativo</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <h1>Cidadania Digital & IA</h1>
+            <p>O Impacto das Deepfakes e da Desinformação na Sociedade</p>
+            <nav>
+                <ul>
+                    <li><a href="#sobre">O que são</a></li>
+                    <li><a href="#perigos">Os Perigos</a></li>
+                    <li><a href="#como-identificar">Como Identificar</a></li>
+                    <li><a href="#quiz">Quiz Interativo</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
         
-        <section id="sobre">
+        <section id="sobre" class="card">
             <h2>O que são Deepfakes?</h2>
-            <p>Deepfakes são vídeos, áudios ou imagens alterados ou criados do zero por meio de Inteligência Artificial profunda (Deep Learning). Embora a tecnologia tenha usos legítimos no cinema, ela frequentemente é usada para criar conteúdos falsos hiper-realistas sem o consentimento das pessoas.</p>
+            <p>Deepfakes são vídeos, áudios ou imagens alterados ou criados do zero por meio de algoritmos de Inteligência Artificial (Deep Learning). Embora a tecnologia traga inovações para o cinema, ela frequentemente é usada para criar conteúdos falsos hiper-realistas sem o consentimento das pessoas, afetando a verdade digital.</p>
         </section>
 
-        <section id="perigos">
+        <section id="perigos" class="card">
             <h2>Os Perigos da Desinformação Automatizada</h2>
-            <p>Com o avanço da IA, a criação de notícias falsas (fake news) em massa tornou-se mais rápida e convincente. Isso pode afetar a reputação de indivíduos, manipular debates públicos e espalhar pânico de forma generalizada.</p>
+            <p>Com o avanço da IA, a criação de notícias falsas (fake news) em massa tornou-se extremamente rápida e convincente. Isso pode destruir a reputação de indivíduos, manipular debates públicos importantes e espalhar pânico de forma generalizada.</p>
             <blockquote>
                 "A desinformação na era da IA não afeta apenas o que vemos, mas mina a nossa confiança na própria realidade."
             </blockquote>
         </section>
 
-        <section id="como-identificar">
-            <h2>Guia Rápido: Como identificar mídias manipuladas</h2>
-            <ul>
-                <li><strong>Pisque os olhos:</strong> Muitas deepfakes em vídeo falham em reproduzir o piscar de olhos natural.</li>
-                <li><strong>Preste atenção às bordas:</strong> Verifique se há desfoque estranho perto do cabelo, orelhas ou fundo do cenário.</li>
-                <li><strong>Analise a iluminação:</strong> Sombras desalinhadas ou reflexos estranhos nos olhos costumam denunciar a IA.</li>
-                <li><strong>Verifique a fonte:</strong> A notícia está em portais de jornalismo confiáveis? Desconfie de links suspeitos.</li>
-            </ul>
-        </section>
-
-        <section id="quiz">
-            <h2>Teste seus Conhecimentos</h2>
-            <p>Responda ao formulário abaixo para descobrir se você sabe se proteger da desinformação.</p>
-            
-            <form id="fake-news-form">
-                <label for="nome">Seu Nome:</label>
-                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
-
-                <fieldset>
-                    <legend>Você costuma checar a fonte de uma notícia antes de compartilhá-la?</legend>
-                    <input type="radio" id="sempre" name="checagem" value="sempre">
-                    <label for="sempre">Sempre, em agências de checagem.</label><br>
-                    
-                    <input type="radio" id="as-vezes" name="checagem" value="as-vezes">
-                    <label for="as-vezes">Às vezes, se parecer muito absurda.</label><br>
-                    
-                    <input type="radio" id="nunca" name="checagem" value="nunca">
-                    <label for="nunca">Não, se recebi de conhecidos eu confio.</label>
-                </fieldset>
-
-                <button type="submit">Enviar Respostas</button>
-            </form>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>&copy; 2026 - Projeto Escolar de Educação Digital e IA.</p>
-        <p>Desenvolvido para fins educacionais.</p>
-    </footer>
-
-    <script src="js/script.js"></script>
-</body>
-</html>
+        <section id="como-identificar" class="card">
+            <h2>Guia Rápido de Identificação</h2>
+            <p>Fique atento aos seguintes sinais ao analisar um conteúdo suspeito:</p>
+            <ul class="lista-dicas">
+                <li><strong>Inconsistências visuais:</strong> Piscar de olhos ausente ou artificial, e sombras desalinhadas no rosto.</li>
+                <li><strong>Falhas de áudio:</strong> Voz robótica ou falta de sincronia perfeita entre a fala e o movimento dos lábios.</li>
+                <li><strong>Erros de cenário:</strong> Desfoques estranhos ao redor do cabelo, orelhas ou no fundo do
